@@ -21,13 +21,12 @@ public class RecetaServiceImplement implements RecetaService {
 
     @Override
     public void deleteReceta(int id) {
-       recetaRepository.deleteById(id);
+        recetaRepository.deleteById(id);
     }
 
     @Override
     public List<RecetaEntity> getAllRecetas() {
-        List<RecetaEntity> recetaEntityList = recetaRepository.findAll();
-        return recetaEntityList;
+        return recetaRepository.findAll();
     }
 
     @Override

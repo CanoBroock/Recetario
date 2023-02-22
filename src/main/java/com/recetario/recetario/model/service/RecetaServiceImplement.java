@@ -16,14 +16,12 @@ public class RecetaServiceImplement implements RecetaService {
 
     @Override
     public RecetaEntity saveReceta(RecetaEntity recetaEntity) {
-        recetaRepository.save(recetaEntity);
-        return recetaEntity;
+        return recetaRepository.save(recetaEntity);
     }
 
     @Override
     public void deleteReceta(int id) {
-        Optional<RecetaEntity> recetaEntity = recetaRepository.findById(id);
-        recetaRepository.delete(recetaEntity);
+       recetaRepository.deleteById(id);
     }
 
     @Override
@@ -34,7 +32,6 @@ public class RecetaServiceImplement implements RecetaService {
 
     @Override
     public Optional<RecetaEntity> getOneReceta(int id) {
-        Optional<RecetaEntity> recetaEntity = recetaRepository.findById(id);
-        return recetaEntity;
+        return recetaRepository.findById(id);
     }
 }

@@ -1,10 +1,10 @@
 package com.recetario.recetario.model.repository;
 
 import com.recetario.recetario.model.domain.RecetaEntity;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
 
-public interface RecetaRepository extends JpaRepository<RecetaEntity, Integer> {
-    void delete(Optional<RecetaEntity> recetaEntity);
+@Repository
+public interface RecetaRepository extends MongoRepository<RecetaEntity, Integer> {
 }

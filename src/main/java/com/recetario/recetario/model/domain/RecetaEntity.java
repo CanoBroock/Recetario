@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,19 +12,13 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "recetas")
+@Document(collection = "recetas")
 public class RecetaEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int recetaID;
-    @Column(name = "Nombre_receta")
     private String nombre;
-    @Column(name = "Ingredientes")
     private List<IngredientesEntity> ingredientes;
-    @Column(name = "Tipo")
     private String tipo;
-    @Column(name = "preparación")
     private String preparacion;
 
     public RecetaEntity(List<IngredientesEntity> ingredientes) {
